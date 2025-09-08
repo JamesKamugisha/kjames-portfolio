@@ -24,7 +24,7 @@ const Projects = () => {
                   alt={title}
                   loading="lazy"
                   onError={(e) => {
-                    e.currentTarget.src = "/images/placeholder.png";
+                    e.currentTarget.src = "/images/placeholder.svg";
                   }}
                 />
               </div>

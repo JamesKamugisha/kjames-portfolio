@@ -19,6 +19,24 @@
       "dest": "/server/index.js"
     },
     {
+      "src": "/assets/(.*\\.js)",
+      "dest": "/assets/$1",
+      "headers": {
+        "Content-Type": "application/javascript; charset=utf-8"
+      }
+    },
+    {
+      "src": "/assets/(.*\\.css)",
+      "dest": "/assets/$1",
+      "headers": {
+        "Content-Type": "text/css; charset=utf-8"
+      }
+    },
+    {
+      "src": "/assets/(.*\\.(ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot))",
+      "dest": "/assets/$1"
+    },
+    {
       "src": "/(.*\\.js)",
       "dest": "/$1",
       "headers": {
