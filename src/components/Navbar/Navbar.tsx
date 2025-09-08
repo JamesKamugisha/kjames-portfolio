@@ -1,0 +1,105 @@
+import React, { useState } from "react";
+import "./Navbar.css";
+import logo from "../../assets/logoj.svg";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
+
+const Navbar: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setIsMenuOpen(false); // Close mobile menu after navigation
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent, id: string) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+        setIsMenuOpen(false);
+      }
+    }
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const navItems = [
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'acks', label: 'Acknowledgements' },
+    { id: 'contact', label: 'Contact' }
+  ];
+
+  return (
+    <nav id="home" className="navbar" role="navigation" aria-label="Main navigation">
+      <a 
+        href="#home" 
+        onClick={(e) => scrollToSection(e, "home")}
+        className="logo-link"
+        aria-label="Go to top of page"
+      >
+        <img src={logo} alt="James Kamugisha Logo" className="logo" />
+      </a>
+
+      <button
+        className="mobile-menu-toggle"
+        onClick={toggleMenu}
+        {...(isMenuOpen ? { 'aria-expanded': 'true' } : { 'aria-expanded': 'false' })}
+        aria-label="Toggle navigation menu"
+        aria-controls="nav-menu"
+      >
+        <span className="sr-only">Menu</span>
+        <div className={`hamburger ${isMenuOpen ? 'open' : ''}`}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+
+      <ul 
+        className={`nav-menu ${isMenuOpen ? 'open' : ''}`} 
+        id="nav-menu"
+        role="menubar"
+      >
+        {navItems.map((item) => (
+          <li key={item.id} className="nav-item" role="none">
+            <a
+              href={`#${item.id}`}
+              onClick={(e) => scrollToSection(e, item.id)}
+              onKeyDown={(e) => handleKeyDown(e, item.id)}
+              role="menuitem"
+              tabIndex={0}
+              aria-label={`Navigate to ${item.label} section`}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <div className="nav-right">
+        <ThemeToggle />
+        <div
+          className="nav-connect"
+          onClick={(e) => scrollToSection(e as any, "contact")}
+          onKeyDown={(e) => handleKeyDown(e, "contact")}
+          role="button"
+          tabIndex={0}
+          aria-label="Get in touch - navigate to contact section"
+        >
+          Get in touch
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

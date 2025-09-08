@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+server/node_modules/
+
+# Development files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Server files (not needed for frontend deployment)
+server/
+docker-compose.yml
+deploy.sh
+
+# Documentation
+README.md
+DEPLOYMENT.md
+ENVIRONMENT_SETUP.md
+EMAILJS_SETUP.md
+IMPROVEMENTS.md
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

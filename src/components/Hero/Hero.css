@@ -1,0 +1,96 @@
+
+.hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 35px;
+    margin-bottom: 20px;
+}
+
+.hero img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 50px;
+}
+
+.hero h1{
+    text-align: center;
+    width: 70%;
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.hero p{
+    text-align: center;
+    width: 70%;
+    font-size: 24px;
+    line-height: 1.5;
+    color: #1f1e1e;
+}
+
+.hero-icons .btn i { 
+    font-size: 36px; 
+}
+/* Icon brand colors */
+.hero-icons .fa-linkedin { color: #069494; }
+.hero-icons .fa-github { color: #000000; }
+
+.hero-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.hero-resume{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.hero-resume .btn{
+    padding: 12px 36px;
+    border-radius: 50px;
+    border: 2px solid #069494;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 20px;
+    font-weight: 500;
+}
+.hero-resume .btn:hover{
+    transform: scale(1.05);
+    background-color: #069494;
+    color: white;
+}
+
+.btn-available {
+  background-color: #069494;
+  color: white;
+}
+
+.btn-unavailable {
+  background-color: black;
+  color: white;
+  opacity: 0.8;
+}
+
+.hero-highlight {
+  position: relative;
+  white-space: nowrap;
+  font-weight: 800; /* optional */
+}
+
+/* blinking '|' caret */
+.caret {
+  display: inline-block;
+  margin-left: 2px;
+  color: #069494; 
+  animation: caret-blink 1s steps(1, end) infinite;
+}
+
+@keyframes caret-blink {
+  0%, 49%   { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}

@@ -1,0 +1,93 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 80%;
+    padding: 10px;
+}
+
+.about-info{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 20px;
+}
+.about-intro p{
+    line-height: 1.6;
+    font-size: 18px;
+}
+.skill-item{
+display: flex;
+gap: 50px;
+align-items: center;
+transition: 0.5s;
+padding: 3px;
+}
+
+.skill-item:hover{
+    transform: scale(1.03);
+}
+
+.skill-item p{
+    min-width: 150px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.skill-item hr{
+  margin: 0;
+  display: block;
+  height: 12px;
+  border-radius: 50px;
+  border: none;
+  background: #000;            /* empty track */
+  width: 100%;                 /* track spans the row */
+  position: relative;
+  overflow: hidden;
+  --delay: 0s;                 /* optional per-bar stagger */
+}
+
+/* Fill grows to --skill-width, holds, then resets */
+.skill-item hr::before{
+  content: "";
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 0;                    /* start empty */
+  border-radius: inherit;
+  background: linear-gradient(90deg, #069494 0%, #06b3b3 50%, #069494 100%);
+  box-shadow: 0 0 10px rgba(6,148,148,0.45); /* subtle glow on the leading edge */
+  animation: fill-loop 6.2s ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+/* The actual loop */
+@keyframes fill-loop{
+  0%   { width: 0; }
+  70%  { width: var(--skill-width, 100%); } /* reach target */
+  85%  { width: var(--skill-width, 100%); } /* brief hold */
+  100% { width: 0; }                        /* reset */
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce){
+  .skill-item hr::before{
+    animation: none;
+    width: var(--skill-width, 100%);
+  }
+}
+.about img{
+    width: 250px;
+    height: 300px;
+    border-radius: 10px;
+    
+}

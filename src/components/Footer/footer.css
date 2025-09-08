@@ -1,0 +1,11 @@
+.footer{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: space-between;
+    text-decoration: none;
+    color: var(--white);
+    background-color: var(--black);
+    padding: 30px 10%;
+    
+}

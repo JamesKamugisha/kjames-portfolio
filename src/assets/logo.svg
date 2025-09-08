@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 77.3">
+  <rect width="160" height="77.3"/>
+  <text transform="translate(14.92 45.23)" fill="#fff" font-family="BDColonius, &apos;BD Colonius&apos;" font-size="28.77" stroke="#fff" stroke-miterlimit="10"><tspan x="0" y="0">&gt;_ James </tspan></text>
+  <text transform="translate(77.67 51.83) scale(.98 1)" fill="#fff" font-family="BCLiguriaL-Regular, &apos;BC Liguria&apos;" font-size="5.1"><tspan x="0" y="0">It</tspan><tspan x="3.31" y="0" letter-spacing="-.04em">’</tspan><tspan x="4.45" y="0">s t</tspan><tspan x="10.26" y="0" letter-spacing="0em">h</tspan><tspan x="13.37" y="0">e po</tspan><tspan x="24.24" y="0" letter-spacing="0em">s</tspan><tspan x="26.6" y="0">sibilities I</tspan></text>
+  <g>
+    <path d="M139.75,35.26c3.26.13,2.96,4.44-.29,4.15-.93-3.21-5.41-3.15-6.36.02-3.24.08-3.48-4.05-.25-4.37.24-4.79,6.88-4.59,6.89.2Z" stroke="#fff" stroke-miterlimit="10" stroke-width=".5"/>
+    <g>
+      <circle cx="136.3" cy="39.83" r="3.05" stroke="#fff" stroke-miterlimit="10" stroke-width=".5"/>
+      <g>
+        <text transform="translate(136.44 41.07)" fill="#fff" font-family="CascadiaCode-Roman, &apos;Cascadia Code&apos;" font-size="3.24" font-variation-settings="&apos;wght&apos; 400"><tspan x="0" y="0">&gt;</tspan></text>
+        <text transform="translate(136.15 41.07) rotate(-180) scale(1 -1)" fill="#fff" font-family="CascadiaCode-Roman, &apos;Cascadia Code&apos;" font-size="3.24" font-variation-settings="&apos;wght&apos; 400"><tspan x="0" y="0">&gt;</tspan></text>
+      </g>
+    </g>
+  </g>
+  <text transform="translate(125.69 51.13) scale(1.75 1)" fill="#666" font-family="BCLiguriaL-Regular, &apos;BC Liguria&apos;" font-size="2.83"><tspan x="0" y="0">I</tspan></text>
+  <text transform="translate(126.88 51.83) scale(.98 1)" fill="#fff" font-family="BCLiguriaL-Regular, &apos;BC Liguria&apos;" font-size="5.1"><tspan x="0" y="0">I</tspan></text>
+</svg>
