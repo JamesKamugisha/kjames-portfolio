@@ -33,7 +33,7 @@
       }
     },
     {
-      "src": "/assets/(.*\\.(ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot))",
+      "src": "/assets/(.*\\.(ico|png|jpg|jpeg|gif|svg|webp|woff|woff2|ttf|eot))",
       "dest": "/assets/$1"
     },
     {
@@ -51,7 +51,7 @@
       }
     },
     {
-      "src": "/(.*\\.(ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot))",
+      "src": "/(.*\\.(ico|png|jpg|jpeg|gif|svg|webp|woff|woff2|ttf|eot))",
       "dest": "/$1"
     },
     {
