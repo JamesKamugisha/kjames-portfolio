@@ -1,4 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || '';
 
 export interface AvailabilityResponse {
   availableForWork: boolean;
@@ -11,6 +11,11 @@ export interface UpdateAvailabilityRequest {
 
 class ApiService {
   private async request<T>(endpoint: string, options?: RequestInit): Promise<T> {
+    // Don't make API calls if no API URL is configured
+    if (!API_BASE_URL) {
+      throw new Error('API not configured - no API_URL provided');
+    }
+
     const url = `${API_BASE_URL}${endpoint}`;
     
     try {

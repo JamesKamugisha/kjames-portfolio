@@ -73,8 +73,14 @@ export const PortfolioProvider: React.FC<PortfolioProviderProps> = ({ children }
       dispatch({ type: 'SET_AVAILABILITY', payload: isAvailable });
     }
 
-    // Try to sync with API in background (non-blocking)
+    // Try to sync with API in background (non-blocking) - only in development
     const syncWithAPI = async () => {
+      // Skip API calls if no API_URL is configured
+      if (!import.meta.env.VITE_API_URL) {
+        console.log('Skipping API sync - no API_URL configured');
+        return;
+      }
+
       try {
         // Dynamically import API service
         const apiModule = await import('../services/api');
@@ -102,8 +108,14 @@ export const PortfolioProvider: React.FC<PortfolioProviderProps> = ({ children }
       // Save to localStorage immediately for instant feedback
       localStorage.setItem('availableForWork', String(state.availableForWork));
       
-      // Try to save to API in background (non-blocking)
+      // Try to save to API in background (non-blocking) - only if API is configured
       const saveToAPI = async () => {
+        // Skip API calls if no API_URL is configured
+        if (!import.meta.env.VITE_API_URL) {
+          console.log('Skipping API save - no API_URL configured');
+          return;
+        }
+
         try {
           // Dynamically import API service
           const apiModule = await import('../services/api');
