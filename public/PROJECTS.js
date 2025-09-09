@@ -5,7 +5,7 @@ const PROJECTS = [
     title: "QPaste.io",
     description:
       "A web application that allows users to share files instantly with others.",
-    image: "/images/placeholder.svg",
+    image: "/images/projects/filesharing.jpg",
     link: "https://qpaste.io",
     tags: ["React", "Firebase", "CSS"],
     status: "In Progress",
@@ -14,7 +14,7 @@ const PROJECTS = [
     title: "Portfolio Website",
     description:
       "A personal portfolio website to showcase my projects and skills.",
-    image: "/images/placeholder.svg",
+    image: "/images/projects/portfolio.png",
     link: "https://myportfolio.com",
     tags: ["React", "CSS", "JavaScript"],
     status: "Completed",
@@ -23,7 +23,7 @@ const PROJECTS = [
     title: "Dynamic Address Assigning System",
     description:
       "An application that dynamically assigns addresses based on user input and location data.",
-    image: "/images/placeholder.svg",
+    image: "/images/projects/addresses.jpg",
     link: "https://addresssystem.com",
     tags: ["Node.js", "Express", "MongoDB"],
     status: "Upcoming",
@@ -32,7 +32,7 @@ const PROJECTS = [
     title: "Land/Plot E-commerce App",
     description:
       "An e-commerce platform for buying and selling land or plots, similar to Zillow.",
-    image: "/images/placeholder.svg",
+    image: "/images/projects/landsale.jpg",
     link: "https://landecommerce.com",
     tags: ["React", "Redux", "Node.js"],
     status: "Upcoming",
@@ -41,7 +41,7 @@ const PROJECTS = [
     title: "Construction Services App",
     description:
       "A web application that connects users with construction service providers.",
-    image: "/images/placeholder.svg",
+    image: "/images/projects/constructionservices.jpg",
     link: "https://constructionservices.com",
     tags: ["React", "Node.js", "Express"],
     status: "Upcoming",
@@ -50,7 +50,7 @@ const PROJECTS = [
     title: "Start-up Ticket and Goal Tracker App",
     description:
       "An app designed for start-ups to track tickets and goals efficiently.",
-    image: "/images/placeholder.svg",
+    image: "/images/projects/ticketing.jpg",
     link: "https://ticketgoaltracker.com",
     tags: ["React", "Redux", "Firebase"],
     status: "In Progress",
@@ -59,7 +59,7 @@ const PROJECTS = [
     title: "Property Management App",
     description:
       "A comprehensive property management application for landlords and property managers.",
-    image: "/images/placeholder.svg",
+    image: "/images/projects/property.jpg",
     link: "https://propertymanagement.com",
     tags: ["React", "Node.js", "MongoDB"],
     status: "Upcoming",
@@ -68,7 +68,7 @@ const PROJECTS = [
     title: "Neighbourhood Watch App",
     description:
       "An app that helps communities stay connected and informed about local safety issues.",
-    image: "/images/placeholder.svg",
+    image: "/images/projects/neighborhood_watch.png",
     link: "https://neighbourhoodwatch.com",
     tags: ["React Native", "Superbase", "Bootstrap"],
     status: "Upcoming",

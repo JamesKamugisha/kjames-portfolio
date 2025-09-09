@@ -22,7 +22,14 @@ const Acknowledgements = () => {
           {ACKS.map(({ name, url, img, alt, description }) => (
             <article className="ack-card" key={name}>
               <div className="ack-media">
-                <img src={img} alt={alt || name} loading="lazy" />
+                <img 
+                  src={img} 
+                  alt={alt || name} 
+                  loading="lazy"
+                  onError={(e) => {
+                    e.currentTarget.src = "/images/placeholder.svg";
+                  }}
+                />
               </div>
               <h3 className="ack-name">{name}</h3>
               <p className="ack-description">{description}</p>
