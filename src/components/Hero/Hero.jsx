@@ -14,9 +14,15 @@ const Hero = () => {
     const saved = localStorage.getItem("availableForWork");
     if (saved !== null) setAvailable(saved === "true");
   }, []);
-  useEffect(() => {
-    localStorage.setItem("availableForWork", String(available));
-  }, [available]);
+
+  // Only save to localStorage when user manually changes availability
+  const handleAvailabilityToggle = () => {
+    setAvailable((prev) => {
+      const newValue = !prev;
+      localStorage.setItem("availableForWork", String(newValue));
+      return newValue;
+    });
+  };
 
   // typing loop
   useEffect(() => {
@@ -91,7 +97,7 @@ const Hero = () => {
         <div className="hero-resume">
           <button
             className={`btn ${available ? "btn-available" : "btn-unavailable"}`}
-            onClick={() => setAvailable((v) => !v)}
+            onClick={handleAvailabilityToggle}
           >
             {available ? "Available for Work" : "Not Available"}
           </button>

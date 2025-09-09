@@ -81,7 +81,10 @@ export const PortfolioProvider: React.FC<PortfolioProviderProps> = ({ children }
         const apiService = apiModule.apiService;
         
         const availabilityData = await apiService.getAvailability();
-        dispatch({ type: 'SET_AVAILABILITY', payload: availabilityData.availableForWork });
+        // Only update if different from current state to avoid loops
+        if (availabilityData.availableForWork !== state.availableForWork) {
+          dispatch({ type: 'SET_AVAILABILITY', payload: availabilityData.availableForWork });
+        }
       } catch (error) {
         console.log('API sync failed, using localStorage:', error);
       }
@@ -93,8 +96,9 @@ export const PortfolioProvider: React.FC<PortfolioProviderProps> = ({ children }
 
   // Save availability changes to localStorage first, then API
   React.useEffect(() => {
-    // Don't save on initial load
-    if (state.availableForWork !== initialState.availableForWork) {
+    // Only save if this is a user-initiated change (not initial load)
+    const isInitialLoad = state.availableForWork === initialState.availableForWork;
+    if (!isInitialLoad) {
       // Save to localStorage immediately for instant feedback
       localStorage.setItem('availableForWork', String(state.availableForWork));
       
