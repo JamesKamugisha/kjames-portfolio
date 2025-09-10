@@ -81,22 +81,20 @@
 }
 
 .nav-right {
-    display: none; /* Temporarily hide to test hamburger visibility */
+    display: flex;
     align-items: center;
     gap: 20px;
 }
 
 /* Mobile menu toggle button */
 .mobile-menu-toggle {
-    display: block; /* Temporarily show on all screen sizes for debugging */
+    display: none;
     background: none;
     border: none;
     cursor: pointer;
     padding: 8px;
     z-index: 1000;
     position: relative;
-    background-color: rgba(255, 0, 0, 0.2) !important; /* Debug background */
-    border: 2px solid red !important; /* Debug border */
 }
 
 .hamburger {
@@ -145,13 +143,11 @@
 /* Mobile responsive styles */
 @media (max-width: 768px) {
     .mobile-menu-toggle {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
+        display: block;
+        visibility: visible;
+        opacity: 1;
         position: relative;
         z-index: 1001;
-        background-color: rgba(255, 0, 0, 0.1) !important; /* Temporary debug background */
-        border: 2px solid red !important; /* Temporary debug border */
     }
 
     .nav-right {
@@ -219,17 +215,14 @@
     }
 
     .hamburger {
-        display: flex !important;
-        visibility: visible !important;
+        display: flex;
+        visibility: visible;
     }
 
     .hamburger span {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        background-color: #000 !important; /* Ensure black color */
-        height: 3px !important;
-        width: 100% !important;
+        display: block;
+        visibility: visible;
+        opacity: 1;
     }
 }
 
@@ -268,13 +261,13 @@
     .hamburger {
         width: 20px;
         height: 16px;
-        display: flex !important;
-        visibility: visible !important;
+        display: flex;
+        visibility: visible;
     }
 
     .hamburger span {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
+        display: block;
+        visibility: visible;
+        opacity: 1;
     }
 }
