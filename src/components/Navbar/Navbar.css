@@ -9,6 +9,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
     border-bottom: 1px solid rgba(0, 0, 0, 0.02);
     position: relative;
+    min-height: 60px; /* Ensure minimum height */
 }
 
 .nav-menu{
@@ -80,20 +81,22 @@
 }
 
 .nav-right {
-    display: flex;
+    display: none; /* Temporarily hide to test hamburger visibility */
     align-items: center;
     gap: 20px;
 }
 
 /* Mobile menu toggle button */
 .mobile-menu-toggle {
-    display: none;
+    display: block; /* Temporarily show on all screen sizes for debugging */
     background: none;
     border: none;
     cursor: pointer;
     padding: 8px;
     z-index: 1000;
     position: relative;
+    background-color: rgba(255, 0, 0, 0.2) !important; /* Debug background */
+    border: 2px solid red !important; /* Debug border */
 }
 
 .hamburger {
@@ -111,6 +114,7 @@
     width: 100%;
     background-color: #000;
     transition: all 0.3s ease;
+    margin: 2px 0; /* Add some spacing between lines */
 }
 
 .hamburger.open span:nth-child(1) {
