@@ -156,12 +156,36 @@
         padding: 80px 40px 40px;
         gap: 30px;
         box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-        transition: right 0.3s ease;
+        transition: right 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
         z-index: 999;
+        visibility: hidden;
+        opacity: 0;
     }
 
     .nav-menu.open {
         right: 0;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Mobile menu backdrop */
+    .nav-menu::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .nav-menu.open::before {
+        opacity: 1;
+        visibility: visible;
     }
 
     .nav-menu .nav-item {
@@ -193,10 +217,14 @@
         width: 100%;
         right: -100%;
         padding: 70px 20px 40px;
+        visibility: hidden;
+        opacity: 0;
     }
 
     .nav-menu.open {
         right: 0;
+        visibility: visible;
+        opacity: 1;
     }
 
     .nav-menu a {

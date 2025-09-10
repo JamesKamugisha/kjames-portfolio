@@ -30,6 +30,10 @@ const Navbar: React.FC = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
@@ -68,6 +72,12 @@ const Navbar: React.FC = () => {
         className={`nav-menu ${isMenuOpen ? 'open' : ''}`} 
         id="nav-menu"
         role="menubar"
+        onClick={(e) => {
+          // Close menu when clicking on the backdrop (not on menu items)
+          if (e.target === e.currentTarget) {
+            closeMenu();
+          }
+        }}
       >
         {navItems.map((item) => (
           <li key={item.id} className="nav-item" role="none">
