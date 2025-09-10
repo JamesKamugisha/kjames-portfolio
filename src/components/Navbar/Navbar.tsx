@@ -66,6 +66,8 @@ const Navbar: React.FC = () => {
           <span></span>
           <span></span>
         </div>
+        {/* Debug text */}
+        <span style={{color: 'white', fontSize: '10px', marginLeft: '5px'}}>MENU</span>
       </button>
 
       <ul 
