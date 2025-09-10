@@ -121,7 +121,84 @@ display: flex;
   transform: translateY(-1px);
 }
 
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .acknowledgements {
+    padding: 20px 15px;
+  }
+
+  .acknowledgements-intro {
+    width: 90%;
+  }
+
+  .acknowledgements-intro h1 {
+    font-size: 2rem;
+  }
+
+  .acknowledgements-intro p {
+    font-size: 16px;
+  }
+
+  .ack-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+  }
+
+  .ack-card {
+    padding: 14px;
+  }
+
+  .ack-name {
+    font-size: 0.9rem;
+  }
+
+  .ack-description {
+    font-size: 0.75rem;
+  }
+
+  .ack-link {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+}
+
 /* Small screens spacing tweak */
 @media (max-width: 480px) {
-  .ack-card { padding: 14px; }
+  .acknowledgements {
+    padding: 15px 10px;
+  }
+
+  .acknowledgements-intro {
+    width: 95%;
+  }
+
+  .acknowledgements-intro h1 {
+    font-size: 1.5rem;
+  }
+
+  .acknowledgements-intro p {
+    font-size: 14px;
+  }
+
+  .ack-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+
+  .ack-card { 
+    padding: 12px; 
+  }
+
+  .ack-name {
+    font-size: 0.85rem;
+  }
+
+  .ack-description {
+    font-size: 0.7rem;
+  }
+
+  .ack-link {
+    padding: 5px 8px;
+    font-size: 0.75rem;
+  }
 }

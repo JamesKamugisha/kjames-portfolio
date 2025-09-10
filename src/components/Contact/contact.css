@@ -91,9 +91,73 @@ label { font-weight: 700; font-size: 1.1rem; }
 .form-status.success { color: #2b7a2b; }
 .form-status.error   { color: #b00020; }
 
-/* Mobile: stack columns and inputs */
-@media (max-width: 700px) {
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .contact {
+    padding: 20px 15px;
+  }
+
+  .contact-intro {
+    width: 90%;
+  }
+
+  .contact-intro h1 {
+    font-size: 2rem;
+  }
+
+  .contact-intro p {
+    font-size: 16px;
+  }
+
   .form-row {
     grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 12px;
+  }
+
+  .contact-button {
+    padding: 16px 24px;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 15px 10px;
+  }
+
+  .contact-intro {
+    width: 95%;
+  }
+
+  .contact-intro h1 {
+    font-size: 1.5rem;
+  }
+
+  .contact-intro p {
+    font-size: 14px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .contact-button {
+    padding: 14px 20px;
+    font-size: 0.9rem;
   }
 }

@@ -42,6 +42,20 @@ body {
   font-size: 16px;
   line-height: 1.6;
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
 }
 
 .custom-hr {
@@ -70,6 +84,19 @@ body {
   color: #069494;
   font-size: 24px;
   font-weight: 600;
+}
+
+/* Mobile responsive identity text */
+@media (max-width: 768px) {
+  .identity {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .identity {
+    font-size: 18px;
+  }
 }
 
 /* create another horizontal line for footer */
