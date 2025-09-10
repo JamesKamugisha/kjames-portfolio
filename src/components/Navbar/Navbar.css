@@ -97,6 +97,13 @@
     position: relative;
 }
 
+/* Debug text for mobile menu */
+.debug-text {
+    color: white;
+    font-size: 10px;
+    margin-left: 5px;
+}
+
 .hamburger {
     width: 24px;
     height: 20px;
@@ -148,8 +155,6 @@
         opacity: 1 !important;
         position: relative;
         z-index: 1001;
-        background-color: rgba(255, 0, 0, 0.3) !important; /* Debug background */
-        border: 2px solid red !important; /* Debug border */
     }
 
     .nav-right {
