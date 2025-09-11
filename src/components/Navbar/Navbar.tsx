@@ -21,6 +21,24 @@ const Navbar = () => {
         <img src={logo} alt="Logo" className="logo" />
       </a>
 
+      {/* Desktop Navigation */}
+      <div className="desktop-nav">
+        <ul className="nav-menu-list">
+          <li onClick={(e) => scrollToSection(e as any, "home")}>Home</li>
+          <li onClick={(e) => scrollToSection(e as any, "about")}>About</li>
+          <li onClick={(e) => scrollToSection(e as any, "projects")}>Projects</li>
+          <li onClick={(e) => scrollToSection(e as any, "acks")}>Acknowledgements</li>
+          <li onClick={(e) => scrollToSection(e as any, "contact")}>Contact</li>
+        </ul>
+        
+        <button
+          className="nav-connect"
+          onClick={(e) => scrollToSection(e as any, "contact")}
+        >
+          Get in touch
+        </button>
+      </div>
+
       {/* Hamburger Toggle */}
       <button
         className={`hamburger-toggle ${isOpen ? "open" : ""}`}
@@ -32,22 +50,34 @@ const Navbar = () => {
         <span></span>
       </button>
 
-      {/* Menu */}
-      <ul className={`nav-menu ${isOpen ? "show" : ""}`}>
-        <li onClick={(e) => scrollToSection(e as any, "home")}>Home</li>
-        <li onClick={(e) => scrollToSection(e as any, "about")}>About</li>
-        <li onClick={(e) => scrollToSection(e as any, "projects")}>Projects</li>
-        <li onClick={(e) => scrollToSection(e as any, "acks")}>Acknowledgements</li>
-        <li onClick={(e) => scrollToSection(e as any, "contact")}>Contact</li>
-        <li>
-          <button
-            className="nav-connect"
-            onClick={(e) => scrollToSection(e as any, "contact")}
-          >
-            Get in touch
-          </button>
-        </li>
-      </ul>
+      {/* Mobile Menu */}
+      <div className={`mobile-menu ${isOpen ? "show" : ""}`}>
+        {/* Close Button */}
+        <button 
+          className="close-menu-btn"
+          onClick={() => setIsOpen(false)}
+          aria-label="Close menu"
+        >
+          <span></span>
+          <span></span>
+        </button>
+        
+        <ul className="mobile-nav-list">
+          <li onClick={(e) => scrollToSection(e as any, "home")}>Home</li>
+          <li onClick={(e) => scrollToSection(e as any, "about")}>About</li>
+          <li onClick={(e) => scrollToSection(e as any, "projects")}>Projects</li>
+          <li onClick={(e) => scrollToSection(e as any, "acks")}>Acknowledgements</li>
+          <li onClick={(e) => scrollToSection(e as any, "contact")}>Contact</li>
+          <li>
+            <button
+              className="mobile-nav-connect"
+              onClick={(e) => scrollToSection(e as any, "contact")}
+            >
+              Get in touch
+            </button>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 };
