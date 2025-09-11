@@ -174,10 +174,10 @@
 }
 
 /* Medium tablet responsive styles */
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
     /* Start hiding nav-right on medium tablets */
     .nav-right {
-        display: none;
+        display: none !important;
     }
     
     /* Show mobile menu toggle on medium tablets */
