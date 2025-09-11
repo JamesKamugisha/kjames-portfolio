@@ -74,37 +74,47 @@
   background: #069494;
 }
 
-/* Mobile Behavior */
 @media (max-width: 768px) {
+  /* Show hamburger */
   .hamburger-toggle {
     display: flex;
+    z-index: 1001; /* keep on top */
   }
 
+  /* Reset menu for mobile */
   .nav-menu {
     position: absolute;
-    top: 100%;
+    top: 100%;        /* directly below navbar */
     left: 0;
     right: 0;
-    flex-direction: column;
     background: white;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
     border-top: 1px solid #eee;
-    display: none;
+
+    /* start hidden */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
   }
 
+  /* Show when toggled */
   .nav-menu.show {
-    display: flex;
+    max-height: 400px; /* enough space for all items */
   }
 
   .nav-menu li {
-    padding: 15px;
+    width: 100%;
     text-align: center;
+    padding: 15px 0;
     border-bottom: 1px solid #f0f0f0;
   }
 
   .nav-connect {
-    margin: 10px auto;
-    width: fit-content;
+    margin: 12px 0;
     font-size: 14px;
     padding: 8px 16px;
   }
 }
+
