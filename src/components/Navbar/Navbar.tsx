@@ -27,9 +27,7 @@ const Navbar: React.FC = () => {
   };
 
   const toggleMenu = () => {
-    console.log('Toggle menu clicked, current state:', isMenuOpen);
     setIsMenuOpen(!isMenuOpen);
-    console.log('New state will be:', !isMenuOpen);
   };
 
   const closeMenu = () => {
@@ -45,7 +43,8 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav id="home" className="navbar" role="navigation" aria-label="Main navigation">
+    <nav className="navbar">
+      {/* Logo */}
       <a 
         href="#home" 
         onClick={(e) => scrollToSection(e, "home")}
@@ -55,77 +54,89 @@ const Navbar: React.FC = () => {
         <img src={logo} alt="James Kamugisha Logo" className="logo" />
       </a>
 
+      {/* Desktop Navigation */}
+      <div className="desktop-nav">
+        <ul className="nav-menu">
+          {navItems.map((item) => (
+            <li key={item.id} className="nav-item">
+              <a
+                href={`#${item.id}`}
+                onClick={(e) => scrollToSection(e, item.id)}
+                onKeyDown={(e) => handleKeyDown(e, item.id)}
+                tabIndex={0}
+                aria-label={`Navigate to ${item.label} section`}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <div className="nav-right">
+          <ThemeToggle />
+          <button
+            className="nav-connect"
+            onClick={(e) => scrollToSection(e as any, "contact")}
+            onKeyDown={(e) => handleKeyDown(e, "contact")}
+            aria-label="Get in touch - navigate to contact section"
+          >
+            Get in touch
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu Toggle */}
       <button
-        className="mobile-menu-toggle"
+        className={`mobile-menu-toggle ${isMenuOpen ? 'open' : ''}`}
         onClick={toggleMenu}
         {...(isMenuOpen ? { 'aria-expanded': 'true' } : { 'aria-expanded': 'false' })}
         aria-label="Toggle navigation menu"
-        aria-controls="nav-menu"
+        aria-controls="mobile-menu"
       >
-        <span className="sr-only">Menu</span>
-        <div className={`hamburger ${isMenuOpen ? 'open' : ''}`}>
+        <span className="hamburger">
           <span></span>
           <span></span>
           <span></span>
-        </div>
-        {/* Debug text */}
-        <span className="debug-text">MENU {isMenuOpen ? 'OPEN' : 'CLOSED'}</span>
-        <div className="debug-indicator">DEBUG</div>
+        </span>
       </button>
+
+      {/* Mobile Menu */}
       <div 
-        className={`nav-wrapper ${isMenuOpen ? 'open' : ''}`}
+        className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}
+        id="mobile-menu"
         onClick={(e) => {
-          // Close menu when clicking on the backdrop (not on menu items)
           if (e.target === e.currentTarget) {
             closeMenu();
           }
         }}
       >
-        <ul 
-          className="nav-menu"
-          id="nav-menu"
-        >
-        {navItems.map((item) => (
-          <li key={item.id} className="nav-item">
-            <a
-              href={`#${item.id}`}
-              onClick={(e) => scrollToSection(e, item.id)}
-              onKeyDown={(e) => handleKeyDown(e, item.id)}
-              tabIndex={0}
-              aria-label={`Navigate to ${item.label} section`}
-            >
-              {item.label}
-            </a>
-          </li>
-        ))}
-        
-        {/* Mobile Get in touch button */}
-        <li className="nav-item mobile-connect">
-          <div
-            className="nav-connect mobile-nav-connect"
+        <ul className="mobile-nav-menu">
+          {navItems.map((item) => (
+            <li key={item.id} className="mobile-nav-item">
+              <a
+                href={`#${item.id}`}
+                onClick={(e) => scrollToSection(e, item.id)}
+                onKeyDown={(e) => handleKeyDown(e, item.id)}
+                tabIndex={0}
+                aria-label={`Navigate to ${item.label} section`}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <div className="mobile-nav-right">
+          <ThemeToggle />
+          <button
+            className="mobile-nav-connect"
             onClick={(e) => scrollToSection(e as any, "contact")}
             onKeyDown={(e) => handleKeyDown(e, "contact")}
-            tabIndex={0}
             aria-label="Get in touch - navigate to contact section"
           >
             Get in touch
-          </div>
-        </li>
-      </ul>
-
-      <div className="nav-right">
-        <ThemeToggle />
-        <div
-          className="nav-connect"
-          onClick={(e) => scrollToSection(e as any, "contact")}
-          onKeyDown={(e) => handleKeyDown(e, "contact")}
-          role="button"
-          tabIndex={0}
-          aria-label="Get in touch - navigate to contact section"
-        >
-          Get in touch
+          </button>
         </div>
-      </div>
       </div>
     </nav>
   );
