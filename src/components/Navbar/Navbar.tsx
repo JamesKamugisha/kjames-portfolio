@@ -27,7 +27,9 @@ const Navbar: React.FC = () => {
   };
 
   const toggleMenu = () => {
+    console.log('Toggle menu clicked, current state:', isMenuOpen);
     setIsMenuOpen(!isMenuOpen);
+    console.log('New state will be:', !isMenuOpen);
   };
 
   const closeMenu = () => {
@@ -67,7 +69,8 @@ const Navbar: React.FC = () => {
           <span></span>
         </div>
         {/* Debug text */}
-        <span className="debug-text">MENU</span>
+        <span className="debug-text">MENU {isMenuOpen ? 'OPEN' : 'CLOSED'}</span>
+        <div className="debug-indicator">DEBUG</div>
       </button>
 
       <ul 
