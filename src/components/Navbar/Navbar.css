@@ -131,6 +131,13 @@
     gap: 20px;
 }
 
+/* Hide nav-wrapper on mobile by default */
+@media (max-width: 768px) {
+    .nav-wrapper {
+        display: none;
+    }
+}
+
 .hamburger {
     width: 24px;
     height: 20px;
@@ -213,11 +220,12 @@
         opacity: 1 !important;
     }
 
-    /* Transform entire nav-wrapper into mobile menu */
-    .nav-wrapper {
+    /* Transform entire nav-wrapper into mobile menu when open */
+    .nav-wrapper.open {
+        display: flex !important;
         position: fixed;
         top: 0;
-        right: -100%;
+        right: 0;
         width: 280px;
         height: 100vh;
         background-color: white;
@@ -229,13 +237,6 @@
         box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
         transition: right 0.3s ease;
         z-index: 1000;
-        visibility: hidden;
-        opacity: 0;
-    }
-
-    /* Show mobile menu when open */
-    .nav-wrapper.open {
-        right: 0;
         visibility: visible;
         opacity: 1;
     }
@@ -251,7 +252,7 @@
     }
 
     /* Mobile menu backdrop */
-    .nav-wrapper::before {
+    .nav-wrapper.open::before {
         content: '';
         position: fixed;
         top: 0;
@@ -260,14 +261,9 @@
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.5);
         z-index: 999;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
-
-    .nav-wrapper.open::before {
         opacity: 1;
         visibility: visible;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
     }
 
     /* Mobile menu items */
