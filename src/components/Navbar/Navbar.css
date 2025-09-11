@@ -213,8 +213,8 @@
         opacity: 1 !important;
     }
 
-    /* Hide desktop nav-menu by default */
-    .nav-menu {
+    /* Transform entire nav-wrapper into mobile menu */
+    .nav-wrapper {
         position: fixed;
         top: 0;
         right: -100%;
@@ -229,21 +229,29 @@
         box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
         transition: right 0.3s ease;
         z-index: 1000;
-        list-style: none;
-        margin: 0;
         visibility: hidden;
         opacity: 0;
     }
 
     /* Show mobile menu when open */
-    .nav-menu.open {
+    .nav-wrapper.open {
         right: 0;
         visibility: visible;
         opacity: 1;
     }
 
+    /* Style nav-menu within mobile wrapper */
+    .nav-menu {
+        flex-direction: column;
+        gap: 25px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
     /* Mobile menu backdrop */
-    .nav-menu::before {
+    .nav-wrapper::before {
         content: '';
         position: fixed;
         top: 0;
@@ -257,7 +265,7 @@
         transition: opacity 0.3s ease, visibility 0.3s ease;
     }
 
-    .nav-menu.open::before {
+    .nav-wrapper.open::before {
         opacity: 1;
         visibility: visible;
     }
@@ -285,15 +293,23 @@
         color: #069494;
     }
 
-    /* Show mobile connect button in mobile menu */
-    .mobile-connect {
-        display: block !important;
+    /* Style nav-right within mobile menu */
+    .nav-right {
+        display: flex !important;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        margin-top: 20px;
     }
 
-    /* Mobile Get in touch button */
-    .mobile-nav-connect {
+    /* Hide mobile connect button in mobile menu (use nav-right instead) */
+    .mobile-connect {
+        display: none !important;
+    }
+
+    /* Style the Get in touch button in mobile nav-right */
+    .nav-right .nav-connect {
         display: block !important;
-        margin-top: 20px;
         padding: 12px 20px;
         border-radius: 50px;
         background-color: black;
@@ -308,12 +324,12 @@
         width: 100%;
     }
 
-    .mobile-nav-connect:hover {
+    .nav-right .nav-connect:hover {
         transform: scale(1.05);
         background-color: #069494;
     }
 
-    .mobile-nav-connect:focus {
+    .nav-right .nav-connect:focus {
         outline: 2px solid #069494;
         outline-offset: 2px;
     }
@@ -365,9 +381,8 @@
     }
 
     /* Smaller button on very small screens */
-    .mobile-nav-connect {
+    .nav-right .nav-connect {
         padding: 10px 16px;
         font-size: 14px;
-        margin-top: 15px;
     }
 }

@@ -72,16 +72,18 @@ const Navbar: React.FC = () => {
         <span className="debug-text">MENU {isMenuOpen ? 'OPEN' : 'CLOSED'}</span>
         <div className="debug-indicator">DEBUG</div>
       </button>
-      <div className="nav-wrapper">
+      <div 
+        className={`nav-wrapper ${isMenuOpen ? 'open' : ''}`}
+        onClick={(e) => {
+          // Close menu when clicking on the backdrop (not on menu items)
+          if (e.target === e.currentTarget) {
+            closeMenu();
+          }
+        }}
+      >
         <ul 
-          className={`nav-menu ${isMenuOpen ? 'open' : ''}`} 
+          className="nav-menu"
           id="nav-menu"
-          onClick={(e) => {
-            // Close menu when clicking on the backdrop (not on menu items)
-            if (e.target === e.currentTarget) {
-              closeMenu();
-            }
-          }}
         >
         {navItems.map((item) => (
           <li key={item.id} className="nav-item">
@@ -123,7 +125,7 @@ const Navbar: React.FC = () => {
         >
           Get in touch
         </div>
-        </div>
+      </div>
       </div>
     </nav>
   );
