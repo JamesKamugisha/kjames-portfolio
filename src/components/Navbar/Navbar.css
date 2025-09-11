@@ -119,6 +119,11 @@
     font-size: 8px;
 }
 
+/* Hide mobile connect button on desktop */
+.mobile-connect {
+    display: none;
+}
+
 .hamburger {
     width: 24px;
     height: 20px;
@@ -196,7 +201,7 @@
         opacity: 1 !important;
     }
 
-    /* Hide desktop nav-menu */
+    /* Hide desktop nav-menu by default */
     .nav-menu {
         position: fixed;
         top: 0;
@@ -214,11 +219,15 @@
         z-index: 1000;
         list-style: none;
         margin: 0;
+        visibility: hidden;
+        opacity: 0;
     }
 
     /* Show mobile menu when open */
     .nav-menu.open {
         right: 0;
+        visibility: visible;
+        opacity: 1;
     }
 
     /* Mobile menu backdrop */
@@ -262,6 +271,39 @@
 
     .nav-menu a:hover {
         color: #069494;
+    }
+
+    /* Show mobile connect button in mobile menu */
+    .mobile-connect {
+        display: block !important;
+    }
+
+    /* Mobile Get in touch button */
+    .mobile-nav-connect {
+        display: block !important;
+        margin-top: 20px;
+        padding: 15px 25px;
+        border-radius: 50px;
+        background-color: black;
+        font-size: 18px;
+        color: white;
+        cursor: pointer;
+        transition: 0.5s;
+        border: none;
+        font-family: inherit;
+        font-weight: 500;
+        text-align: center;
+        width: 100%;
+    }
+
+    .mobile-nav-connect:hover {
+        transform: scale(1.05);
+        background-color: #069494;
+    }
+
+    .mobile-nav-connect:focus {
+        outline: 2px solid #069494;
+        outline-offset: 2px;
     }
 
     /* Show hamburger menu */

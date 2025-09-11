@@ -76,7 +76,6 @@ const Navbar: React.FC = () => {
       <ul 
         className={`nav-menu ${isMenuOpen ? 'open' : ''}`} 
         id="nav-menu"
-        role="menubar"
         onClick={(e) => {
           // Close menu when clicking on the backdrop (not on menu items)
           if (e.target === e.currentTarget) {
@@ -85,12 +84,11 @@ const Navbar: React.FC = () => {
         }}
       >
         {navItems.map((item) => (
-          <li key={item.id} className="nav-item" role="none">
+          <li key={item.id} className="nav-item">
             <a
               href={`#${item.id}`}
               onClick={(e) => scrollToSection(e, item.id)}
               onKeyDown={(e) => handleKeyDown(e, item.id)}
-              role="menuitem"
               tabIndex={0}
               aria-label={`Navigate to ${item.label} section`}
             >
@@ -98,6 +96,19 @@ const Navbar: React.FC = () => {
             </a>
           </li>
         ))}
+        
+        {/* Mobile Get in touch button */}
+        <li className="nav-item mobile-connect">
+          <div
+            className="nav-connect mobile-nav-connect"
+            onClick={(e) => scrollToSection(e as any, "contact")}
+            onKeyDown={(e) => handleKeyDown(e, "contact")}
+            tabIndex={0}
+            aria-label="Get in touch - navigate to contact section"
+          >
+            Get in touch
+          </div>
+        </li>
       </ul>
 
       <div className="nav-right">
