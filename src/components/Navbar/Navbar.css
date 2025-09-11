@@ -165,7 +165,7 @@
     border: 0;
 }
 
-/* Tablet and Mobile responsive styles */
+/* Large tablet responsive styles */
 @media (max-width: 1024px) {
     .nav-menu {
         gap: 40px;
@@ -173,17 +173,27 @@
     }
 }
 
-@media (max-width: 768px) {
-    /* Show mobile menu toggle */
+/* Medium tablet responsive styles */
+@media (max-width: 900px) {
+    /* Start hiding nav-right on medium tablets */
+    .nav-right {
+        display: none;
+    }
+    
+    /* Show mobile menu toggle on medium tablets */
     .mobile-menu-toggle {
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
     }
+}
 
-    /* Hide desktop nav-right section */
-    .nav-right {
-        display: none;
+@media (max-width: 768px) {
+    /* Mobile menu toggle already shown at 1024px, just ensure it's visible */
+    .mobile-menu-toggle {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 
     /* Hide desktop nav-menu */
