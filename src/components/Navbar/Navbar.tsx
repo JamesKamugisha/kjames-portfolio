@@ -72,17 +72,17 @@ const Navbar: React.FC = () => {
         <span className="debug-text">MENU {isMenuOpen ? 'OPEN' : 'CLOSED'}</span>
         <div className="debug-indicator">DEBUG</div>
       </button>
-
-      <ul 
-        className={`nav-menu ${isMenuOpen ? 'open' : ''}`} 
-        id="nav-menu"
-        onClick={(e) => {
-          // Close menu when clicking on the backdrop (not on menu items)
-          if (e.target === e.currentTarget) {
-            closeMenu();
-          }
-        }}
-      >
+      <div className="nav-wrapper">
+        <ul 
+          className={`nav-menu ${isMenuOpen ? 'open' : ''}`} 
+          id="nav-menu"
+          onClick={(e) => {
+            // Close menu when clicking on the backdrop (not on menu items)
+            if (e.target === e.currentTarget) {
+              closeMenu();
+            }
+          }}
+        >
         {navItems.map((item) => (
           <li key={item.id} className="nav-item">
             <a
@@ -122,6 +122,7 @@ const Navbar: React.FC = () => {
           aria-label="Get in touch - navigate to contact section"
         >
           Get in touch
+        </div>
         </div>
       </div>
     </nav>
