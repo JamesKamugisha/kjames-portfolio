@@ -7,7 +7,7 @@
     flex-direction: column;
     gap: 35px;
     margin-bottom: 20px;
-    min-height: 100vh;
+    height: 100vh;
     background: #0b0d1a; /* fallback in case particles don't load */
     color: white;
     overflow: hidden;

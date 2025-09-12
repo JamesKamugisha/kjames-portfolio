@@ -60,6 +60,15 @@ const ParticleBackground: React.FC = () => {
   };
 
   return (
+    <div style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      zIndex: 0,
+      overflow: "hidden"
+    }}>
       <Particles
         id="tsparticles"
         init={particlesInit}
@@ -70,9 +79,10 @@ const ParticleBackground: React.FC = () => {
           left: 0,
           width: "100%",
           height: "100%",
-          zIndex: 1
+          zIndex: 0
         }}
       />
+    </div>
   );
 };
 
