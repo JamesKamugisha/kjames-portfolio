@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./Hero.css";
 import heroImage from "../../assets/hero-image1.jpg";
+import ParticleBackground from "../ParticleBackground/ParticleBackground";
 
 const Hero = () => {
   const [available, setAvailable] = useState(false);
+  const [showResumeMessage, setShowResumeMessage] = useState(false);
 
   // typewriter state
   const fullText = "Kamugisha";
@@ -22,6 +24,15 @@ const Hero = () => {
       localStorage.setItem("availableForWork", String(newValue));
       return newValue;
     });
+  };
+
+  // Handle resume download click
+  const handleResumeClick = () => {
+    setShowResumeMessage(true);
+    // Hide the message after 3 seconds
+    setTimeout(() => {
+      setShowResumeMessage(false);
+    }, 3000);
   };
 
   // typing loop
@@ -57,54 +68,81 @@ const Hero = () => {
   }, [typed, isDeleting]);
 
   return (
-    <div id="hero" className="hero">
-      <img src={heroImage} alt="RobotImage" />
-      <div className="hero">
-        <h1>
-          James{" "}
-          <span className="hero-highlight">
-            {typed}
-            <span className="caret" aria-hidden="true">
-              |
+    <section
+      id="hero"
+      className="hero"
+      style={{
+        position: "relative",
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        overflow: "hidden",
+      }}
+    >
+      <ParticleBackground />
+
+      <div style={{ position: "relative", zIndex: 2, textAlign: "center" }}>
+        <img src={heroImage} alt="RobotImage" />
+        <div className="hero-content">
+          <h1>
+            James{" "}
+            <span className="hero-highlight">
+              {typed}
+              <span className="caret" aria-hidden="true">
+                |
+              </span>
             </span>
-          </span>
-        </h1>
+          </h1>
 
-        <p>
-          A Fullstack and Mobile App developer, based in the USA with a love for
-          creating innovative solutions. Explore my work and let's connect!
-        </p>
+          <p>
+            A Fullstack and Mobile App developer, based in the USA in the New
+            England area, with a love for creating innovative solutions. Explore
+            my work and let's connect!
+          </p>
 
-        <div className="hero-icons">
-          <a
-            href="https://www.linkedin.com/in/james-kamugisha-j1k8/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn"
-          >
-            <i className="fa-brands fa-linkedin"></i>
-          </a>
-          <a
-            href="https://github.com/JamesKamugisha"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn"
-          >
-            <i className="fa-brands fa-github"></i>
-          </a>
-        </div>
+          <div className="hero-icons">
+            <a
+              href="https://www.linkedin.com/in/james-kamugisha-j1k8/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn"
+            >
+              <i className="fa-brands fa-linkedin"></i>
+            </a>
+            <a
+              href="https://github.com/JamesKamugisha"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn"
+            >
+              <i className="fa-brands fa-github"></i>
+            </a>
+          </div>
 
-        <div className="hero-resume">
-          <button
-            className={`btn ${available ? "btn-available" : "btn-unavailable"}`}
-            onClick={handleAvailabilityToggle}
-          >
-            {available ? "Available for Work" : "Not Available"}
-          </button>
-          <button className="btn">Download Resume</button>
+          <div className="hero-resume">
+            <button
+              className={`btn ${
+                available ? "btn-available" : "btn-unavailable"
+              }`}
+              onClick={handleAvailabilityToggle}
+            >
+              {available ? "Available for Work" : "Not Available"}
+            </button>
+            <div className="resume-button-container">
+              <button className="btn" onClick={handleResumeClick}>
+                Download Resume
+              </button>
+              {showResumeMessage && (
+                <div className="resume-message">
+                  Resume not available at the moment
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

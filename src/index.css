@@ -10,38 +10,15 @@ html {
   --black: #000000;
   --white: #ffffff;
   --teal:  #069494;
-  
-  /* Light theme variables */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --bg-hover: #e9ecef;
-  --text-primary: #000000;
-  --text-secondary: #6c757d;
-  --accent-color: #069494;
-  --border-color: rgba(0, 0, 0, 0.1);
-  --shadow-color: rgba(0, 0, 0, 0.1);
-}
-
-/* Dark theme variables */
-[data-theme="dark"] {
-  --bg-primary: #1a1a1a;
-  --bg-secondary: #2d2d2d;
-  --bg-hover: #404040;
-  --text-primary: #ffffff;
-  --text-secondary: #b0b0b0;
-  --accent-color: #069494;
-  --border-color: rgba(255, 255, 255, 0.1);
-  --shadow-color: rgba(0, 0, 0, 0.3);
 }
 
 body {
   height: 100vh;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: var(--white);
+  color: var(--black);
   font-family: 'Outfit', sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
