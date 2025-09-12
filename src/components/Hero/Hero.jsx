@@ -4,7 +4,7 @@ import heroImage from "../../assets/hero-image1.jpg";
 import ParticleBackground from "../ParticleBackground/ParticleBackground";
 
 const Hero = () => {
-  const [available, setAvailable] = useState(false);
+  const [showAvailabilityMessage, setShowAvailabilityMessage] = useState(false);
   const [showResumeMessage, setShowResumeMessage] = useState(false);
 
   // typewriter state
@@ -12,18 +12,13 @@ const Hero = () => {
   const [typed, setTyped] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
-  useEffect(() => {
-    const saved = localStorage.getItem("availableForWork");
-    if (saved !== null) setAvailable(saved === "true");
-  }, []);
-
-  // Only save to localStorage when user manually changes availability
-  const handleAvailabilityToggle = () => {
-    setAvailable((prev) => {
-      const newValue = !prev;
-      localStorage.setItem("availableForWork", String(newValue));
-      return newValue;
-    });
+  // Handle availability check click
+  const handleAvailabilityCheck = () => {
+    setShowAvailabilityMessage(true);
+    // Hide the message after 3 seconds
+    setTimeout(() => {
+      setShowAvailabilityMessage(false);
+    }, 3000);
   };
 
   // Handle resume download click
@@ -121,14 +116,14 @@ const Hero = () => {
           </div>
 
           <div className="hero-resume">
-            <button
-              className={`btn ${
-                available ? "btn-available" : "btn-unavailable"
-              }`}
-              onClick={handleAvailabilityToggle}
-            >
-              {available ? "Available for Work" : "Not Available"}
+            <button className="btn" onClick={handleAvailabilityCheck}>
+              Check availability
             </button>
+            {showAvailabilityMessage && (
+              <div className="availability-message">
+                Currently not available for work
+              </div>
+            )}
             <div className="resume-button-container">
               <button className="btn" onClick={handleResumeClick}>
                 Download Resume
