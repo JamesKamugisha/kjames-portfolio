@@ -1,7 +1,6 @@
 import React, { useCallback } from 'react';
 import Particles from 'react-tsparticles';
 import { loadSlim } from 'tsparticles-slim';
-import type { IOptions } from 'tsparticles-engine';
 import './ParticleBackground.css';
 
 const ParticleBackground: React.FC = () => {
@@ -9,7 +8,7 @@ const ParticleBackground: React.FC = () => {
     await loadSlim(engine);
   }, []);
 
-  const particlesConfig: IOptions = {
+  const particlesConfig: any = {
     background: { 
       color: "transparent" 
     },
