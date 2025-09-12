@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import Particles from 'react-tsparticles';
 import { loadSlim } from 'tsparticles-slim';
+import './ParticleBackground.css';
 
 const ParticleBackground: React.FC = () => {
   const particlesInit = useCallback(async (engine: any) => {
@@ -60,27 +61,12 @@ const ParticleBackground: React.FC = () => {
   };
 
   return (
-    <div style={{
-      position: "absolute",
-      top: 0,
-      left: 0,
-      width: "100%",
-      height: "100%",
-      zIndex: 0,
-      overflow: "hidden"
-    }}>
+    <div className="particle-background">
       <Particles
         id="tsparticles"
         init={particlesInit}
         options={particlesConfig}
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          zIndex: 0
-        }}
+        className="tsparticles"
       />
     </div>
   );
