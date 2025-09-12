@@ -81,27 +81,16 @@ button:disabled, .disabled {
   }
 }
 
-/* create another horizontal line for footer */
-.footer-hr {
-  all: unset; /* remove all browser default styles */
-  display: block;
+/* Footer divider with small globe */
+.footer-divider {
   width: 100%;
   margin: 0px auto;
   height: 2px;
   background: #000000;
   position: relative;
-}
-.footer-hr::after {
-  content: "";
-  position: absolute;
-  top: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #ffffff;
-  border: 2px solid #000000;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Disable default cursor behavior globally - reset to auto so explicit styles take precedence */

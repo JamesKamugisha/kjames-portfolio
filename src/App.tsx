@@ -9,6 +9,7 @@ import Projects from "./components/Projects/Projects";
 import Acknowledgements from "./components/Acknowledgements/Acknowledgements";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
+import SmallGlobe from "./components/SmallGlobe/SmallGlobe";
 
 const App: React.FC = () => {
   return (
@@ -25,7 +26,9 @@ const App: React.FC = () => {
             <Acknowledgements />
             <Contact />
           </main>
-          <hr className="footer-hr" />
+          <div className="footer-divider">
+            <SmallGlobe />
+          </div>
           <Footer />
         </div>
       </PortfolioProvider>
