@@ -94,7 +94,6 @@ export default function SmallGlobe() {
       wireframe: true,
       transparent: true,
       opacity: 0.6, // Increased opacity for better visibility
-      linewidth: 1, // Ensure thin, crisp lines
     });
     const globe = new THREE.Mesh(sphereGeo, sphereMat);
     scene.add(globe);
