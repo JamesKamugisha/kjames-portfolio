@@ -24,11 +24,11 @@ const Navbar = () => {
       {/* Desktop Navigation */}
       <div className="desktop-nav">
         <ul className="nav-menu-list">
-          <li onClick={(e) => scrollToSection(e as any, "home")}>Home</li>
-          <li onClick={(e) => scrollToSection(e as any, "about")}>About</li>
-          <li onClick={(e) => scrollToSection(e as any, "projects")}>Projects</li>
-          <li onClick={(e) => scrollToSection(e as any, "acks")}>Acknowledgements</li>
-          <li onClick={(e) => scrollToSection(e as any, "contact")}>Contact</li>
+          <li className="clickable" onClick={(e) => scrollToSection(e as any, "home")}>Home</li>
+          <li className="clickable" onClick={(e) => scrollToSection(e as any, "about")}>About</li>
+          <li className="clickable" onClick={(e) => scrollToSection(e as any, "projects")}>Projects</li>
+          <li className="clickable" onClick={(e) => scrollToSection(e as any, "acks")}>Acknowledgements</li>
+          <li className="clickable" onClick={(e) => scrollToSection(e as any, "contact")}>Contact</li>
         </ul>
         
         <button
@@ -63,11 +63,11 @@ const Navbar = () => {
         </button>
         
         <ul className="mobile-nav-list">
-          <li onClick={(e) => scrollToSection(e as any, "home")}>Home</li>
-          <li onClick={(e) => scrollToSection(e as any, "about")}>About</li>
-          <li onClick={(e) => scrollToSection(e as any, "projects")}>Projects</li>
-          <li onClick={(e) => scrollToSection(e as any, "acks")}>Acknowledgements</li>
-          <li onClick={(e) => scrollToSection(e as any, "contact")}>Contact</li>
+          <li className="clickable" onClick={(e) => scrollToSection(e as any, "home")}>Home</li>
+          <li className="clickable" onClick={(e) => scrollToSection(e as any, "about")}>About</li>
+          <li className="clickable" onClick={(e) => scrollToSection(e as any, "projects")}>Projects</li>
+          <li className="clickable" onClick={(e) => scrollToSection(e as any, "acks")}>Acknowledgements</li>
+          <li className="clickable" onClick={(e) => scrollToSection(e as any, "contact")}>Contact</li>
           <li>
             <button
               className="mobile-nav-connect"

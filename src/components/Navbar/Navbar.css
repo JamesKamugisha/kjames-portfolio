@@ -27,72 +27,15 @@
 .navbar * {
   text-decoration: none !important;
   color: inherit;
-  cursor: pointer !important;
 }
 
-/* Ensure all interactive elements have cursor pointer */
+/* Clean navbar cursor rules - only for interactive elements */
 .navbar a,
 .navbar button,
-.navbar li,
-.navbar [role="button"],
-.navbar .logo,
-.navbar .hamburger-toggle,
-.navbar .close-menu-btn,
-.navbar .nav-connect,
-.navbar .mobile-nav-connect,
-.navbar .nav-menu-list li,
-.navbar .mobile-nav-list li {
+.navbar li {
   cursor: pointer !important;
 }
 
-/* Force cursor pointer on all clickable elements */
-.navbar a:hover,
-.navbar button:hover,
-.navbar li:hover,
-.navbar .logo:hover,
-.navbar .hamburger-toggle:hover,
-.navbar .close-menu-btn:hover,
-.navbar .nav-connect:hover,
-.navbar .mobile-nav-connect:hover,
-.navbar .nav-menu-list li:hover,
-.navbar .mobile-nav-list li:hover {
-  cursor: pointer !important;
-}
-
-/* Ultra-specific cursor pointer rules */
-.navbar .nav-menu-list li,
-.navbar .mobile-nav-list li,
-.navbar .nav-connect,
-.navbar .mobile-nav-connect,
-.navbar .hamburger-toggle,
-.navbar .close-menu-btn,
-.navbar .logo {
-  cursor: pointer !important;
-}
-
-/* Force cursor on all states */
-.navbar *:hover {
-  cursor: pointer !important;
-}
-
-/* Explicit cursor pointer for all interactive elements */
-.navbar a,
-.navbar button,
-.navbar li,
-.navbar .logo,
-.navbar .hamburger-toggle,
-.navbar .close-menu-btn,
-.navbar .nav-connect,
-.navbar .mobile-nav-connect,
-.navbar .nav-menu-list li,
-.navbar .mobile-nav-list li {
-  cursor: pointer !important;
-}
-
-/* Force pointer cursor on all navbar elements */
-.navbar * {
-  cursor: pointer !important;
-}
 
 .navbar a {
   text-decoration: none !important;

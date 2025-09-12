@@ -30,7 +30,9 @@ const ParticleBackground: React.FC = () => {
         enable: true, 
         speed: 2, 
         random: true, 
-        outModes: "bounce" as const
+        outModes: {
+          default: "bounce"
+        }
       },
       opacity: { 
         value: 0.8 

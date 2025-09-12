@@ -22,6 +22,11 @@ body {
   overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+/* Specific disabled state rule */
+button:disabled, .disabled {
+  cursor: not-allowed !important;
+}
+
 /* Responsive typography */
 @media (max-width: 768px) {
   body {
@@ -97,4 +102,14 @@ body {
   border-radius: 50%;
   width: 30px;
   height: 30px;
+}
+
+/* Disable default cursor behavior globally - reset to auto so explicit styles take precedence */
+* {
+  cursor: auto !important;
+}
+
+/* Force interactive elements to use pointer - at bottom for highest priority */
+a, button, [role="button"], input[type="submit"], .clickable {
+  cursor: pointer !important;
 }

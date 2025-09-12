@@ -136,6 +136,8 @@
     }
 }
 
+/* Cursor pointer handled by global rules */
+
 .hero-icons .btn i { 
     font-size: 36px; 
 }
@@ -190,7 +192,7 @@
     padding: 12px 36px;
     border-radius: 50px;
     border: 2px solid #069494;
-    cursor: pointer;
+    cursor: pointer !important;
     transition: 0.5s;
     font-size: 20px;
     font-weight: 500;
