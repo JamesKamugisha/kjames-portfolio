@@ -1,0 +1,38 @@
+.three-globe-wrapper {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.three-globe {
+  /* Background mode - behind content */
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .three-globe-wrapper {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .three-globe-wrapper {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+/* Ensure canvas fills container */
+.three-globe-wrapper canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}

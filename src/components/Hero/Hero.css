@@ -15,7 +15,7 @@
 
 .hero-content {
     position: relative;
-    z-index: 3;
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,22 +24,34 @@
     text-align: center;
 }
 
-.hero img{
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    margin-top: 50px;
+/* Hero Layout Sections */
+.hero-globe-section {
     position: relative;
-    z-index: 3;
-    border: 3px solid rgba(6, 255, 255, 0.3);
-    box-shadow: 0 0 30px rgba(6, 255, 255, 0.2);
-    transition: all 0.3s ease;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.hero img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 40px rgba(6, 255, 255, 0.4);
+.hero-content-section {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+/* ThreeGlobe positioning - overrides ThreeGlobe.css for hero section */
+.three-globe-wrapper {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    z-index: 1 !important;
+}
+
+/* ThreeGlobe styles are in ThreeGlobe.css */
 
 .hero h1{
     text-align: center;
@@ -50,7 +62,7 @@
     color: white;
     text-shadow: 0 0 20px rgba(6, 255, 255, 0.3);
     position: relative;
-    z-index: 3;
+    z-index: 1;
 }
 
 .hero p{
@@ -60,7 +72,7 @@
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.9);
     position: relative;
-    z-index: 3;
+    z-index: 1;
     text-shadow: 0 0 10px rgba(6, 255, 255, 0.2);
 }
 
@@ -107,7 +119,19 @@
     }
 }
 
+@media (max-width: 768px) {
+    .hero-globe-section {
+        margin-bottom: 15px;
+    }
+    
+    /* ThreeGlobe responsive styles are in ThreeGlobe.css */
+}
+
 @media (max-width: 480px) {
+    .hero-globe-section {
+        margin-bottom: 10px;
+    }
+    
     .hero h1 {
         font-size: 28px;
         width: 95%;
@@ -118,10 +142,7 @@
         width: 95%;
     }
 
-    .hero img {
-        width: 120px;
-        height: 120px;
-    }
+    /* ThreeGlobe responsive styles are in ThreeGlobe.css */
 
     .hero-resume .btn {
         padding: 10px 16px;
@@ -171,7 +192,7 @@
     gap: 20px;
     margin-top: 20px;
     position: relative;
-    z-index: 3;
+    z-index: 1;
 }
 
 .hero-resume{
@@ -179,7 +200,7 @@
     justify-content: center;
     gap: 20px;
     position: relative;
-    z-index: 3;
+    z-index: 1;
 }
 
 .resume-button-container {

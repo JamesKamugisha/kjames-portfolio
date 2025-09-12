@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Hero.css";
-import heroImage from "../../assets/hero-image1.jpg";
 import ParticleBackground from "../ParticleBackground/ParticleBackground";
+import ThreeGlobe from "../ThreeGlobe/ThreeGlobe";
 
 const Hero = () => {
   const [showAvailabilityMessage, setShowAvailabilityMessage] = useState(false);
@@ -70,6 +70,7 @@ const Hero = () => {
         position: "relative",
         minHeight: "100vh",
         display: "flex",
+        flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
         overflow: "hidden",
@@ -77,8 +78,13 @@ const Hero = () => {
     >
       <ParticleBackground />
 
-      <div style={{ position: "relative", zIndex: 2, textAlign: "center" }}>
-        <img src={heroImage} alt="RobotImage" />
+      {/* Globe Section - Top Row */}
+      <div className="hero-globe-section">
+        <ThreeGlobe />
+      </div>
+
+      {/* Content Section - Bottom Row */}
+      <div className="hero-content-section">
         <div className="hero-content">
           <h1>
             James{" "}
