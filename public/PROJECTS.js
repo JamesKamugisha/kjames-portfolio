@@ -15,7 +15,7 @@ const PROJECTS = [
     description:
       "A personal portfolio website to showcase my projects and skills.",
     image: "/images/projects/portfolio.png",
-    link: "https://myportfolio.com",
+    link: "https://kjames.dev",
     tags: ["React", "CSS", "JavaScript"],
     status: "Completed",
   },
@@ -24,7 +24,7 @@ const PROJECTS = [
     description:
       "An application that dynamically assigns addresses based on user input and location data.",
     image: "/images/projects/addresses.jpg",
-    link: "https://addresssystem.com",
+    link: "https://trecta-addresses.com",
     tags: ["Node.js", "Express", "MongoDB"],
     status: "Upcoming",
   },
